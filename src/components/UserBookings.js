@@ -3,7 +3,6 @@ import axios from 'axios';
 import Calendar from 'react-calendar';
 import { useNavigate } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
-import 'react-calendar/dist/Calendar.css'; 
 
 const UserBookings = ({ userId }) => {
   const [bookings, setBookings] = useState([]);
@@ -50,7 +49,8 @@ const UserBookings = ({ userId }) => {
             ) ? 'highlight' : null;
           }
         }}
-        className="user-bookings__calendar"/>
+        className="user-bookings__calendar"
+      />
     </div>
   );
 };
