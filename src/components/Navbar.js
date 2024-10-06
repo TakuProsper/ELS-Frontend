@@ -12,7 +12,7 @@ function Navbar() {
         <div className="container-fluid d-flex justify-content-between">
           <div className="row w-100">
             <div className="col-md-6">
-              <a className="navbar-brand ml-5" href="#">
+              <a className="navbar-brand ml-5" href="/">
                 <h2><strong>Mark Your Moment</strong></h2>
               </a>
             </div>

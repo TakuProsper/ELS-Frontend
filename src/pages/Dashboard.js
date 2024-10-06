@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
 import useAxios from "../utils/useAxios";
-import jwtDecode from 'jwt-decode';  // Removed braces
+import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import UserBookings from '../components/UserBookings';
@@ -9,6 +10,7 @@ function Dashboard() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [filter, setFilter] = useState('this_week'); // default filter
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [location, setLocation] = useState('');
@@ -16,6 +18,7 @@ function Dashboard() {
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
 
+  // eslint-disable-next-line no-unused-vars
   const api = useAxios();
   const token = localStorage.getItem("authTokens");
 

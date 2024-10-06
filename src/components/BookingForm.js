@@ -5,12 +5,11 @@ function BookingForm({ eventId, ticketPrice }) {
   const [ticketQuantity, setTicketQuantity] = useState(1);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-  const [loading, setLoading] = useState(false); // State for loading
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Retrieve the token from localStorage
     const token = localStorage.getItem("authTokens");
     if (!token) {
       setError("You must be logged in to make a booking.");
@@ -18,11 +17,10 @@ function BookingForm({ eventId, ticketPrice }) {
     }
 
     const accessToken = JSON.parse(token).access;
-
-    setLoading(true); // Set loading to true when submitting
+    setLoading(true);
 
     try {
-      const response = await axios.post(
+      await axios.post(
         'http://localhost:8000/api/bookings/',
         {
           event: eventId,
@@ -30,18 +28,18 @@ function BookingForm({ eventId, ticketPrice }) {
         },
         {
           headers: {
-            'Authorization': `Bearer ${accessToken}`,  // Pass the token here
+            'Authorization': `Bearer ${accessToken}`,
             'Content-Type': 'application/json',
           }
         }
       );
 
       setSuccess(true);
-      setError(null); // Clear any previous errors
+      setError(null);
     } catch (error) {
       setError(error.response?.data?.error || "An error occurred.");
     } finally {
-      setLoading(false); // Set loading to false when done
+      setLoading(false);
     }
   };
 
@@ -60,7 +58,7 @@ function BookingForm({ eventId, ticketPrice }) {
             />
           </div>
           <button className='btn button mt-4' type="submit" disabled={loading}>
-            {loading ? "Processing..." : "Book Now"} {/* Change button text based on loading state */}
+            {loading ? "Processing..." : "Book Now"}
           </button>
           {error && <p style={{ color: 'red' }}>{error}</p>}
         </>

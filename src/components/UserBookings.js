@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import 'react-calendar/dist/Calendar.css';
 
 const UserBookings = ({ userId }) => {
+  // eslint-disable-next-line no-unused-vars
   const [bookings, setBookings] = useState([]);
   const [calendarBookings, setCalendarBookings] = useState([]);
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const UserBookings = ({ userId }) => {
         tileClassName={({ date, view }) => {
           // Highlight the days where the user has bookings
           if (view === 'month') {
-            return calendarBookings.some(booking => 
+            return calendarBookings.some(booking =>
               booking.date.toDateString() === date.toDateString()
             ) ? 'highlight' : null;
           }
