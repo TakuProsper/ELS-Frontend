@@ -37,6 +37,7 @@ const BookingDetails = () => {
     setCancelLoading(true); // Set cancel loading to true when submitting
 
     try {
+      // eslint-disable-next-line no-unused-vars
       const response = await axios.delete(
         `http://localhost:8000/api/cancel-booking/${id}/`,
         {

@@ -6,7 +6,6 @@ import LoginPage from './pages/LoginPage';
 import UserDashboard from './pages/Dashboard'
 import PrivateRoute from './utils/PrivateRoute'; 
 import { AuthProvider } from './context/AuthContext';
-import Navbar from './components/Navbar';
 import RegisterPage from './pages/RegisterPage';
 import Footer from './components/Footer';
 import BookingDetails from './components/BookingDetails';
