@@ -16,7 +16,7 @@ function EventDetail() {
       return;
     }
 
-    axios.get(`http://localhost:8000/api/events/${eventId}/`)
+    axios.get(`https://web-production-6cb9.up.railway.app/api/events/${eventId}/`)
       .then(response => {
         setEvent(response.data);
         setLoading(false);

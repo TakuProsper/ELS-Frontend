@@ -8,7 +8,7 @@ function Logout() {
       console.error('Refresh token not found in local storage');
       return;
     }
-    axios.post('http://localhost:8000/api/logout/', { refresh_token: refreshToken }) // Send the refresh token in the request body
+    axios.post('https://web-production-6cb9.up.railway.app/api/logout/', { refresh_token: refreshToken }) // Send the refresh token in the request body
       .then(response => {
         // Remove token from local storage
         localStorage.removeItem('token');

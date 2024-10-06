@@ -11,7 +11,7 @@ const UserBookings = ({ userId }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/users/${userId}/bookings/`)
+    axios.get(`https://web-production-6cb9.up.railway.app/api/users/${userId}/bookings/`)
       .then(response => {
         setBookings(response.data);
         // Map bookings to dates in 'calendarBookings'

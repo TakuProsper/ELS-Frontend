@@ -34,7 +34,7 @@ function Dashboard() {
     const fetchEvents = async () => {
       setLoading(true);  // Set loading state
       try {
-        const response = await axios.get(`http://localhost:8000/api/events/`, {
+        const response = await axios.get(`https://web-production-6cb9.up.railway.app/api/events/`, {
           params: {
             user_id,
             location,

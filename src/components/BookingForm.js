@@ -21,7 +21,7 @@ function BookingForm({ eventId, ticketPrice }) {
 
     try {
       await axios.post(
-        'http://localhost:8000/api/bookings/',
+        'https://web-production-6cb9.up.railway.app/api/bookings/',
         {
           event: eventId,
           ticket_quantity: ticketQuantity,

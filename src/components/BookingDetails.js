@@ -12,7 +12,7 @@ const BookingDetails = () => {
 
   useEffect(() => {
     // Fetch booking details by ID
-    axios.get(`http://localhost:8000/api/bookings/${id}/`)
+    axios.get(`https://web-production-6cb9.up.railway.app/api/bookings/${id}/`)
       .then(response => {
         setBooking(response.data);
         setLoading(false);
@@ -39,7 +39,7 @@ const BookingDetails = () => {
     try {
       // eslint-disable-next-line no-unused-vars
       const response = await axios.delete(
-        `http://localhost:8000/api/cancel-booking/${id}/`,
+        `https://web-production-6cb9.up.railway.app/api/cancel-booking/${id}/`,
         {
           headers: {
             'Authorization': `Bearer ${accessToken}`,  // Pass the token here
